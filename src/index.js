@@ -45,7 +45,7 @@ const incomingMiddleware = (event, next) => {
     }
     handleMessage(event, user.id, user, platform, user.id, text, bp.messenger.sendText)
   } else if(platform === "irc") {
-    if(type !== "message" &&  type !== "pm") {
+    if(type !== "pm") {
       return next()
     }
     const sendTo = (type === "message") ? channel : user
